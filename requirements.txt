@@ -1,0 +1,10 @@
+# 本项目依赖：
+#   flask   —— Web 服务器
+#   openai  —— 调用大模型（通过兼容模式指向阿里百炼 DashScope）
+#
+# 安装：
+#   pip install -r requirements.txt
+#   或者：pip install flask openai
+
+flask>=2.0
+openai>=1.0

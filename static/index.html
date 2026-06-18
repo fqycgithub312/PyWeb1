@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!--
+        前端入口：大模型问答页面
+        - 纯原生 HTML + CSS + JS，不依赖任何框架
+        - 直接双击本文件可打开；也可以通过 Flask 服务 http://127.0.0.1:5000 访问
+    -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>大模型问答助手</title>
+
+    <!-- 后端地址。若直接双击打开本 HTML，默认请求本机 Flask 的 5000 端口；
+         若通过 Flask 服务打开（location.protocol 为 http/https），则走相对路径 "/api/chat" -->
+    <script>
+        window.__API_BASE__ =
+            location.protocol === "file:" ? "http://127.0.0.1:5000/api" : "/api";
+    </script>
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- 整个聊天窗口的容器 -->
+    <div class="app">
+        <!-- 顶部标题栏 -->
+        <header class="app-header">
+            <h1>🤖 大模型问答助手</h1>
+            <button id="btn-clear" class="btn btn-ghost" title="清空当前对话">清空对话</button>
+        </header>
+
+        <!-- 消息列表（聊天记录） -->
+        <main id="chat-box" class="chat-box">
+            <!-- 一条欢迎消息，由 JS 判断如果没历史就插一条 -->
+        </main>
+
+        <!-- 底部输入区域 -->
+        <footer class="input-bar">
+            <textarea
+                id="input"
+                rows="1"
+                placeholder="输入你的问题，按 Enter 发送，Shift+Enter 换行"
+            ></textarea>
+            <button id="btn-send" class="btn btn-primary">发送</button>
+        </footer>
+
+        <!-- 状态提示（例如"正在思考..." / 错误信息） -->
+        <div id="status" class="status"></div>
+    </div>
+
+    <!-- 业务脚本 -->
+    <script src="app.js"></script>
+</body>
+</html>

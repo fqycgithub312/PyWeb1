@@ -1,0 +1,7 @@
+{
+  "api_base": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+  "api_key": "sk-6ecd6d21f0954a90b7db922a2b9c2894",
+  "model": "qwen3-vl-235b-a22b-thinking",
+  "timeout": 60,
+  "system_prompt": "你是一个乐于助人、回答简洁清晰的智能助手。"
+}
